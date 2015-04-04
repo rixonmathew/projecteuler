@@ -1,0 +1,24 @@
+package com.rixon.projecteuler.main.matrixproduct.direction;
+
+import com.rixon.projecteuler.main.matrixproduct.MatrixCoordinate;
+
+/**
+ * Created by rixonmathew on 04/04/15.
+ */
+public class BottomRight implements Direction {
+    @Override
+    public DirectionType getDirectionType() {
+        return DirectionType.BOTTOM_RIGHT;
+    }
+
+    @Override
+    public MatrixCoordinate getNewCoordinates(MatrixCoordinate currentCoordinate, int numberOfElements) {
+        return MatrixCoordinate.fromCoordinates(currentCoordinate.getRow()+numberOfElements,currentCoordinate.getColumn()+numberOfElements);
+    }
+
+    @Override
+    public MatrixCoordinate getNextCoordinate(MatrixCoordinate startingCoordinate) {
+        return MatrixCoordinate.fromCoordinates(startingCoordinate.getRow()+1,startingCoordinate.getColumn()+1);
+    }
+
+}
